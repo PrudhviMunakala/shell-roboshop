@@ -11,7 +11,7 @@ do
     --security-group-ids $SG_ID \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" \
     --instance-type t3.micro \
-    --query 'Instances[0].Instanceid' \
+    --query 'Instances[0].InstanceId' \
     --output text
     )
 
