@@ -3,7 +3,7 @@
 SG_ID="sg-02ea97487c317f700"
 AMI_ID="ami-0220d79f3f480ecf5"
 ZONE_id="Z03858732HUVY50OKOZOA"
-DOMAIN-NAME="ptdevops.online"
+DOMAIN_NAME="ptdevops.online"
 
 
 for instance in $@
@@ -58,7 +58,7 @@ aws route53 change-resource-record-sets \
   ]
     }
   
-  '
+  '     
   echo "record updated for $instance"
 done
 
