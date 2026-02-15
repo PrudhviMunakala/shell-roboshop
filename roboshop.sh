@@ -11,12 +11,11 @@ do
     --security-group-ids $SG_ID \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" \
     --instance-type t3.micro \
-    --query 'Instances[0].PrivateIpAddress' \
+    --query 'Instances[0].Instanceid' \
     --output text
     )
 
-    if [ $instance_id == "frontend" ]; 
-    then
+    if [ $instance_id == "frontend" ]; then
        IP=$(
         aws ec2 describe-instances \
         --instance-ids $instance_id \
@@ -24,7 +23,6 @@ do
         --output text
         ) 
     else 
-
     IP=$(
         aws ec2 describe-instances \
         --instance-ids $instance_id \
@@ -32,7 +30,6 @@ do
         --output text
         )
     fi
-
 echo "Instance IP address is : $IP"
 
 done
