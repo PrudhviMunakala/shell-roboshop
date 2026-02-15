@@ -15,7 +15,7 @@ do
     --output text
     )
 
-    if [ $instance_id == "frontedn"]; 
+    if [ $instance_id == "frontend" ]; 
     then
        IP=$(
         aws ec2 describe-instances \
